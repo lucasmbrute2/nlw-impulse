@@ -1,7 +1,5 @@
-import { useContext, useState } from "react";
+import { Widget } from "./components/Widget";
 
-function App() {
-	return <div className="App">Se leu mamou</div>;
+export function App() {
+	return <Widget />;
 }
-
-export default App;
