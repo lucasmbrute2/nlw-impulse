@@ -6,11 +6,13 @@ import { Loading } from "../Loading";
 interface ScreenshotButtonProps {
     onScreenshotTook: (screenshot: string | null) => void;
     screenshot: string | null;
+    disabled: boolean;
 }
 
 export function ScreenshotButton({
     onScreenshotTook,
     screenshot,
+    disabled
 }: ScreenshotButtonProps) {
     const [isTakingScreenshot, setIsTakingScreenshot] = useState(false);
 
@@ -27,6 +29,7 @@ export function ScreenshotButton({
     if (screenshot) {
         return (
             <button
+                disabled={disabled}
                 type="button"
                 className="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
                 onClick={() => onScreenshotTook(null)}
